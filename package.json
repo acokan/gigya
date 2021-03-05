@@ -1,31 +1,29 @@
 {
-  "name": "gigya",
-  "description": "Gigya SDK for NodeJS.",
+  "name": "gigya-node",
+  "description": "Gigya SDK for NodeJS",
   "keywords": [
     "gigya"
   ],
-  "version": "3.0.2",
+  "version": "0.1.0",
   "author": {
     "name": "Scott Hovestadt",
     "email": "scott.hovestadt@gmail.com"
   },
   "maintainers": [
     {
-      "name": "Scott Hovestadt",
-      "email": "scott.hovestadt@gmail.com"
-    },
-    {
-      "name": "Baryo Bar Yosef",
-      "email": "baryo.stuff@gmail.com"
+      "name": "Aleksandar Kandic",
+      "email": "acokandic93@gmail.com"
     }
   ],
   "scripts": {
     "prepack": "npm run build",
-    "build": "tsc"
+    "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 assets/**/* dist/",
+    "build": "npm run clean && tsc && npm run copy-files"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/scotthovestadt/gigya.git"
+    "url": "git://github.com/acokan/gigya.git"
   },
   "dependencies": {
     "@types/lodash": "^4.14.138",
@@ -44,10 +42,12 @@
   "typings": "dist/index",
   "readmeFilename": "README.md",
   "bugs": {
-    "url": "https://github.com/scotthovestadt/gigya/issues"
+    "url": "https://github.com/acokan/gigya/issues"
   },
-  "homepage": "https://github.com/scotthovestadt/gigya",
+  "homepage": "https://github.com/acokan/gigya",
   "devDependencies": {
+    "copyfiles": "2.4.1",
+    "rimraf": "3.0.2",
     "typescript": "3.6.2"
   },
   "license": "MIT"

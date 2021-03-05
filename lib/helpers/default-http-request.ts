@@ -3,22 +3,26 @@ import ProxyHttpRequest from '../interfaces/proxy-http-request';
 import GigyaResponse from '../interfaces/gigya-response';
 import fs = require('fs');
 import path = require('path');
-import {Headers} from "request";
+import { Headers } from "request";
 
 let certificate: string;
 let verboseHttpError = process.env['GIGYA_VERBOSE_HTTP_LOGGING'];
 
 function getCertificate(): string {
     if (!certificate) {
-        certificate = fs.readFileSync(path.join(__dirname, '../../../assets/cacert.pem')).toString();
+        try {
+            certificate = fs.readFileSync(path.join(__dirname, '../../cacert.pem'), 'utf-8');
+        } catch (e) {
+            log(e);
+        }
     }
     return certificate;
 }
 
-function log(msg : any) : void {
+function log(msg: any) : void {
     if (verboseHttpError) {
         console.log(msg);
-    }    
+    }
 }
 
 export const httpMethod = 'post';
