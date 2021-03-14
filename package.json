@@ -17,9 +17,7 @@
   ],
   "scripts": {
     "prepack": "npm run build",
-    "clean": "rimraf dist/",
-    "copy-files": "copyfiles -u 1 assets/**/* dist/",
-    "build": "npm run clean && tsc && npm run copy-files"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -46,8 +44,6 @@
   },
   "homepage": "https://github.com/acokan/gigya",
   "devDependencies": {
-    "copyfiles": "2.4.1",
-    "rimraf": "3.0.2",
     "typescript": "3.6.2"
   },
   "license": "MIT"

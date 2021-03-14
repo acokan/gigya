@@ -17,7 +17,7 @@ export class SigUtils {
         if (!this.secret && !secret) {
             throw new Error('Cannot calculate signature, secret key not set!');
         }
-        const secretBuffer = new Buffer(secret || this.secret, 'base64');
+        const secretBuffer = Buffer.from(secret || this.secret, 'base64');
         return crypto.createHmac('sha1', secretBuffer).update(baseString).digest('base64');
     }
 
@@ -41,7 +41,7 @@ export class SigUtils {
 
     /**
      * Use this method as part of implementing dynamic control over login session expiration, in conjunction with assigning the value '-1' to the sessionExpiration parameter.
-     * 
+     *
      * Write the result to cookie: 'gltexp_${apiKey}'.
      */
     public getDynamicSessionSignature(gltCookie: string, timeoutInSeconds: number, secret?: string): string {

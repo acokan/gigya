@@ -11,9 +11,14 @@ let verboseHttpError = process.env['GIGYA_VERBOSE_HTTP_LOGGING'];
 function getCertificate(): string {
     if (!certificate) {
         try {
-            certificate = fs.readFileSync(path.join(__dirname, '../../cacert.pem'), 'utf-8');
+            certificate = fs.readFileSync(path.join(__dirname, '../../../assets/cacert.pem')).toString();
         } catch (e) {
-            log(e);
+            if (e.code === 'ENOENT' && e.syscall === 'open') {
+                const root = path.resolve('node_modules', 'gigya-node');
+                certificate = fs.readFileSync(path.join(root, './assets/cacert.pem'), 'utf-8');
+            } else {
+                log(e);
+            }
         }
     }
     return certificate;
