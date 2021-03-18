@@ -13,12 +13,7 @@ function getCertificate(): string {
         try {
             certificate = fs.readFileSync(path.join(__dirname, '../../../assets/cacert.pem')).toString();
         } catch (e) {
-            if (e.code === 'ENOENT' && e.syscall === 'open') {
-                const root = path.resolve('node_modules', 'gigya-node');
-                certificate = fs.readFileSync(path.join(root, './assets/cacert.pem'), 'utf-8');
-            } else {
-                log(e);
-            }
+            log(e);
         }
     }
     return certificate;
