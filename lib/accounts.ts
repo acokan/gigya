@@ -627,6 +627,7 @@ export interface AccountsSetAccountInfoParams {
     conflictHandling?: 'fail' | 'saveProfileAndFail';
     data?: any;
     subscriptions?: any;
+    preferences?: any;
     isActive?: boolean;
     isLockedOut?: boolean;
     isVerified?: boolean;
@@ -725,6 +726,7 @@ export interface AccountsRegisterParams {
     cid?: string;
     data?: any;
     subscriptions?: any;
+    preferences?: any;
     finalizeRegistration?: boolean;
     secretQuestion?: string;
     secretAnswer?: string;
