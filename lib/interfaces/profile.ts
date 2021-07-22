@@ -17,7 +17,7 @@ export interface Profile {
     country?: string;
     education?: Array<Education>;
     email?: string;
-    gender: Gender,
+    gender?: Gender,
     hometown?: string;
     industry?: string;
     interestedIn?: string;

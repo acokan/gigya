@@ -20,7 +20,7 @@ export interface Identity {
     thumbnailURL?: string;
     firstName?: string;
     lastName?: string;
-    gender: Gender,
+    gender?: Gender,
     birthDay?: number;
     birthMonth?: number;
     birthYear?: number;
