@@ -1,5 +1,5 @@
 export interface Phone {
-    type: string;
+    type?: string;
     number: string;
 }
 

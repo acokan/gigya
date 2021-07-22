@@ -718,7 +718,7 @@ export interface AccountsRegisterParams {
     username?: string;
     email?: string;
     password: string;
-    regToken: string;
+    regToken?: string;
     profile?: Profile;
     captchaText?: string;
     captchaToken?: string;
@@ -729,7 +729,7 @@ export interface AccountsRegisterParams {
     secretQuestion?: string;
     secretAnswer?: string;
     lang?: string;
-    targetEnv: TargetEnv;
+    targetEnv?: TargetEnv;
     include?: string;
     sessionExpiration?: SessionExpiration;
     siteUID?: string;
