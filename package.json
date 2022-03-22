@@ -4,7 +4,7 @@
   "keywords": [
     "gigya"
   ],
-  "version": "0.1.5",
+  "version": "0.2.0",
   "author": {
     "name": "Scott Hovestadt",
     "email": "scott.hovestadt@gmail.com"
@@ -45,7 +45,7 @@
   },
   "homepage": "https://github.com/acokan/gigya",
   "devDependencies": {
-    "typescript": "3.6.2"
+    "typescript": "3.9.10"
   },
   "license": "MIT"
 }
