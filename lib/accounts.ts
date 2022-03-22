@@ -85,6 +85,24 @@ export class Accounts {
     }
 
     /**
+     * In implementations of Consent Management, this method returns all the consent statements defined for a given site.
+     *
+     * @see https://help.sap.com/viewer/8b8d6fffe113457094a17701f63e3d6a/GIGYA/en-US/660b99419e294030968610cbb27f42bf.html
+     */
+    public getConsentsStatements(params?: BaseParams) {
+        return this.gigya.request<AccountsGetConsentsStatementsResponse>('accounts.getConsentsStatements');
+    }
+
+    /**
+     * This method retrieves the details of a legal statement (associated with a consent statement), including the languages, versions, purpose, custom data.
+     *
+     * @see https://help.sap.com/viewer/8b8d6fffe113457094a17701f63e3d6a/GIGYA/en-US/660b99419e294030968610cbb27f42bf.html
+     */
+    public getLegalStatements(params?: BaseParams & AccountsGetLegalStatementsParams) {
+        return this.gigya.request<AccountsGetLegalStatementsResponse>('accounts.getLegalStatements', params);
+    }
+
+    /**
      * This method retrieves the counters associated with a user ID (UID).
      *
      * @see http://developers.gigya.com/display/GD/accounts.getCounters+REST
@@ -145,6 +163,15 @@ export class Accounts {
      */
     public getScreenSets(params?: BaseParams & AccountsGetScreenSetsParams) {
         return this.gigya.request<AccountsGetScreenSetsResponse>('accounts.getScreenSets', params);
+    }
+
+    /**
+     * This API returns all effective consents (complete) for the specified site/group API key.
+     *
+     * @see https://help.sap.com/viewer/8b8d6fffe113457094a17701f63e3d6a/GIGYA/en-US/13d09b52ca21463580b418599b46de64.html
+     */
+    public getSiteConsentDetails(params?: BaseParams & AccountsGetSiteConsentDetailsParams) {
+        return this.gigya.request<AccountsGetSiteConsentDetailsResponse>('accounts.getSiteConsentDetails', params);
     }
 
     /**
@@ -300,6 +327,24 @@ export class Accounts {
     }
 
     /**
+     * This method creates a new Consent Statement in SAP Customer Data Cloud or updates an existing one.
+     *
+     * @see https://help.sap.com/viewer/8b8d6fffe113457094a17701f63e3d6a/GIGYA/en-US/e598c585f0f548b799cea824ccee2bc5.html
+     */
+    public setConsentsStatements(params: BaseParams & AccountsSetConsentsStatementsParams) {
+        return this.gigya.request('accounts.setConsentsStatements', params);
+    }
+
+    /**
+     * This method sets the details of an existing consent statement, including the languages, versions, purpose, custom data.
+     *
+     * @see https://help.sap.com/viewer/8b8d6fffe113457094a17701f63e3d6a/GIGYA/en-US/6fd13c4e61c642a096323d6efdc22653.html
+     */
+    public setLegalStatements(params: BaseParams & AccountsSetLegalStatementsParams) {
+        return this.gigya.request('accounts.setLegalStatements', params);
+    }
+
+    /**
      * This method is used to modify site policies regarding user registration and login.
      *
      * @see http://developers.gigya.com/display/GD/accounts.setPolicies+REST
@@ -390,6 +435,22 @@ export interface AccountsGetConflictingAccountResponse {
         loginProviders: Array<string>;
     }
     loginID: string;
+}
+
+export interface AccountsGetConsentsStatementsResponse {
+    preferences: any;
+}
+
+export interface AccountsGetLegalStatementsParams {
+    lang?: any;
+    consentId?: string;
+    format?: string | null;
+    callback?: string;
+    httpStatusCodes?: boolean;
+}
+
+export interface AccountsGetLegalStatementsResponse {
+    legalStatements: any;
 }
 
 export interface AccountsGetCountersParams {
@@ -646,6 +707,22 @@ export interface AccountsSetAccountInfoParams {
     username?: string;
     created?: string;
     regSource?: string;
+}
+
+export interface AccountsSetConsentsStatementsParams {
+    preferences: any;
+    format?: string | null;
+    callback?: string;
+    httpStatusCodes?: boolean;
+}
+
+export interface AccountsSetLegalStatementsParams {
+    lang?: any;
+    consentId?: string;
+    legalStatements?: any;
+    format?: string | null;
+    callback?: string;
+    httpStatusCodes?: boolean;
 }
 
 export interface AccountsImportAccountParams {
@@ -958,6 +1035,15 @@ export interface AccountsGetScreenSetsParams {
 
 export interface AccountsGetScreenSetsResponse {
     screenSets: Array<ScreenSet>;
+}
+
+export interface AccountsGetSiteConsentDetailsParams {
+    apiKey?: string;
+
+}
+
+export interface AccountsGetSiteConsentDetailsResponse {
+    siteConsentDetails: any;
 }
 
 export interface ScreenSetVersion {
