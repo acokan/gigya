@@ -9,6 +9,7 @@ import GM from './gm';
 import Fidm from './fidm';
 import Reports from './reports';
 import IDX from './idx';
+import TFA from './tfa';
 import GigyaError from './gigya-error';
 import GigyaResponse from './interfaces/gigya-response';
 import ErrorCode from './interfaces/error-code';
@@ -33,6 +34,7 @@ export * from './gm';
 export * from './fidm';
 export * from './reports';
 export * from './idx';
+export * from './tfa';
 export * from './gigya-error';
 export * from './interfaces/gigya-response';
 export * from './interfaces/error-code';
@@ -75,6 +77,7 @@ export class Gigya {
     public readonly fidm: Fidm;
     public readonly reports: Reports;
     public readonly idx: IDX;
+    public readonly tfa: TFA;
 
     protected _signer: ISigner;
 
@@ -140,6 +143,7 @@ export class Gigya {
         this.fidm = new Fidm(this);
         this.reports = new Reports(this);
         this.idx = new IDX(this);
+        this.tfa = new TFA(this);
 
         this.setCredentials(creds);
     }

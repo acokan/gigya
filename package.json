@@ -4,6 +4,9 @@
   "keywords": [
     "gigya"
   ],
+  "engines": {
+    "node": ">=16"
+  },
   "version": "0.2.0",
   "author": {
     "name": "Scott Hovestadt",
@@ -17,7 +20,7 @@
   ],
   "scripts": {
     "prepack": "npm run build",
-    "build": "tsc",
+    "build": "rm -rf dist && tsc",
     "test": ""
   },
   "repository": {
@@ -28,15 +31,11 @@
     "@types/lodash": "^4.14.180",
     "@types/node": "^12.20.47",
     "@types/request": "^2.48.8",
-    "jose": "^1.28.1",
+    "jose": "^1.28.2",
     "lodash": "^4.17.21",
     "request": "^2.88.2",
     "strict-uri-encode": "^2.0.0"
   },
-  "files": [
-    "dist",
-    "assets"
-  ],
   "main": "dist/index.js",
   "typings": "dist/index",
   "readmeFilename": "README.md",
