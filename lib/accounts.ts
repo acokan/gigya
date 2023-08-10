@@ -1,5 +1,6 @@
 import Gigya from './gigya';
 import RBA from './rba';
+import TFA from './tfa';
 import Webhooks from './accounts.webhooks';
 import Account from './interfaces/account';
 import SessionInfo from './interfaces/session-info';
@@ -10,6 +11,7 @@ import Counter from './interfaces/counter';
 import Profile from './interfaces/profile';
 import BaseParams from './interfaces/base-params';
 
+export * from './tfa';
 export * from './rba';
 export * from './accounts.webhooks';
 export * from './interfaces/account';
@@ -24,9 +26,11 @@ export * from './interfaces/base-params';
 export class Accounts {
     public readonly rba: RBA;
     public readonly webhooks: Webhooks;
+    public readonly tfa: TFA;
 
     constructor(protected gigya: Gigya) {
         this.rba = new RBA(gigya);
+        this.tfa = new TFA(gigya);
         this.webhooks = new Webhooks(gigya);
     }
 
@@ -866,11 +870,19 @@ export interface AccountsSetProfilePhotoParams {
     publish?: boolean;
 }
 
+export interface AccountClientContext {
+    clientIP: string;
+    deviceID?: string;
+    isCaptchaVerified?: boolean;
+    riskScore?: number;
+}
+
 export interface AccountsLoginParams {
     loginID: string;
     password: string;
     captchaToken?: string;
     captchaText?: string;
+    clientContext?: AccountClientContext;
     actionAttributes?: { [key: string]: string; };
     cid?: string;
     include?: Array<string> | string;
