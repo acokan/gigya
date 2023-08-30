@@ -11,18 +11,18 @@ export * from './interfaces/base-params';
 export * from './interfaces/tfa';
 
 export class TFA {
-    public readonly tfaEmail: TFAEmail;
-    public readonly tfaPhone: TFAPhone;
-    public readonly tfaPush: TFAPush;
-    public readonly tfaTotp: TFATotp;
-    public readonly tfaBackupCodes: TFABackupCodes;
+    public readonly email: TFAEmail;
+    public readonly phone: TFAPhone;
+    public readonly push: TFAPush;
+    public readonly totp: TFATotp;
+    public readonly backupcodes: TFABackupCodes;
     
     constructor(protected gigya: Gigya) {
-        this.tfaEmail = new TFAEmail(gigya);
-        this.tfaPhone = new TFAPhone(gigya);
-        this.tfaPush = new TFAPush(gigya);
-        this.tfaTotp = new TFATotp(gigya);
-        this.tfaBackupCodes = new TFABackupCodes(gigya);
+        this.email = new TFAEmail(gigya);
+        this.phone = new TFAPhone(gigya);
+        this.push = new TFAPush(gigya);
+        this.totp = new TFATotp(gigya);
+        this.backupcodes = new TFABackupCodes(gigya);
     }
 
     /**
