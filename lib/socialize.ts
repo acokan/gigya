@@ -4,6 +4,7 @@ import BaseParams from './interfaces/base-params';
 import Gender from './interfaces/gender';
 import TargetEnv from './interfaces/target-env';
 import SessionExpiration from './interfaces/session-expiration';
+import { CoreOptions } from 'request';
 
 export * from './interfaces/gigya-response';
 export * from './interfaces/base-params';
@@ -20,8 +21,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.deleteAccount+REST
      */
-    public deleteAccount(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.deleteAccount', params);
+    public deleteAccount(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.deleteAccount', params, options);
     }
 
     /**
@@ -29,8 +30,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.delUserSettings+REST
      */
-    public delUserSettings(params: BaseParams & any) {
-        return this.gigya.request('socialize.delUserSettings', params);
+    public delUserSettings(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request('socialize.delUserSettings', params, options);
     }
 
     /**
@@ -38,8 +39,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.exchangeUIDSignature+REST
      */
-    public exchangeUIDSignature(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.exchangeUIDSignature', params);
+    public exchangeUIDSignature(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.exchangeUIDSignature', params, options);
     }
     
     /**
@@ -47,8 +48,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.facebookGraphOperation+REST
      */
-    public facebookGraphOperation(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.facebookGraphOperation ', params);
+    public facebookGraphOperation(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.facebookGraphOperation ', params, options);
     }
 
     /**
@@ -56,8 +57,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.getContacts+REST
      */
-    public getContacts(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.getContacts', params);
+    public getContacts(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.getContacts', params, options);
     }
 
     /**
@@ -65,8 +66,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.getFriendsInfo+REST
      */
-    public getFriendsInfo(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.getFriendsInfo', params);
+    public getFriendsInfo(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.getFriendsInfo', params, options);
     }
 
     /**
@@ -74,8 +75,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.getRawData+REST
      */
-    public getRawData(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.getRawData', params);
+    public getRawData(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.getRawData', params, options);
     }
 
     /**
@@ -83,8 +84,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.getReactionsCount+REST
      */
-    public getReactionsCount(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.getReactionsCount', params);
+    public getReactionsCount(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.getReactionsCount', params, options);
     }
 
     /**
@@ -92,8 +93,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.getSessionInfo+REST
      */
-    public getSessionInfo(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.getSessionInfo', params);
+    public getSessionInfo(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.getSessionInfo', params, options);
     }
 
     /**
@@ -101,8 +102,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.getTopShares+REST
      */
-    public getTopShares(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.getTopShares', params);
+    public getTopShares(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.getTopShares', params, options);
     }
 
     /**
@@ -110,8 +111,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.getUserInfo+REST
      */
-    public getUserInfo(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.getUserInfo', params);
+    public getUserInfo(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.getUserInfo', params, options);
     }
 
     /**
@@ -119,8 +120,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.getUserSettings+REST
      */
-    public getUserSettings(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.getUserSettings', params);
+    public getUserSettings(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.getUserSettings', params, options);
     }
 
     /**
@@ -128,8 +129,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.importIdentities+REST
      */
-    public importIdentities(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.importIdentities', params);
+    public importIdentities(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.importIdentities', params, options);
     }
 
     /**
@@ -137,8 +138,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.incrementReactionsCount+REST
      */
-    public incrementReactionsCount(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.incrementReactionsCount', params);
+    public incrementReactionsCount(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.incrementReactionsCount', params, options);
     }
 
     /**
@@ -146,8 +147,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.logout+REST
      */
-    public logout(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.logout', params);
+    public logout(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.logout', params, options);
     }
 
     /**
@@ -155,8 +156,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.notifyLogin+REST
      */
-    public notifyLogin(params: BaseParams & (SocializeNotifyLoginParamsSiteUID | SocializeNotifyLoginParamsProviderSessions)) {
-        return this.gigya.request<SocializeNotifyLoginResponse>('socialize.notifyLogin', params);
+    public notifyLogin(params: BaseParams & (SocializeNotifyLoginParamsSiteUID | SocializeNotifyLoginParamsProviderSessions), options?: CoreOptions | undefined) {
+        return this.gigya.request<SocializeNotifyLoginResponse>('socialize.notifyLogin', params, options);
     }
 
     /**
@@ -164,8 +165,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.notifyRegistration+REST
      */
-    public notifyRegistration(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.notifyRegistration', params);
+    public notifyRegistration(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.notifyRegistration', params, options);
     }
 
     /**
@@ -173,8 +174,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.publishUserAction+REST
      */
-    public publishUserAction(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.publishUserAction', params);
+    public publishUserAction(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.publishUserAction', params, options);
     }
 
     /**
@@ -182,8 +183,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.removeConnection+REST
      */
-    public removeConnection(params: BaseParams & any) {
-        return this.gigya.request('socialize.removeConnection', params);
+    public removeConnection(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request('socialize.removeConnection', params, options);
     }
 
     /**
@@ -191,8 +192,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.setStatus+REST
      */
-    public setStatus(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.setStatus', params);
+    public setStatus(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.setStatus', params, options);
     }
 
     /**
@@ -200,8 +201,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.setUID+REST
      */
-    public setUID(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.setUID', params);
+    public setUID(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.setUID', params, options);
     }
 
     /**
@@ -209,8 +210,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.setUserInfo+REST
      */
-    public setUserInfo(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.setUserInfo', params);
+    public setUserInfo(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.setUserInfo', params, options);
     }
 
     /**
@@ -218,8 +219,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.setUserSettings+REST
      */
-    public setUserSettings(params: BaseParams & any) {
-        return this.gigya.request<any>('socialize.setUserSettings', params);
+    public setUserSettings(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('socialize.setUserSettings', params, options);
     }
 
     /**
@@ -227,8 +228,8 @@ export class Socialize {
      * 
      * @see http://developers.gigya.com/display/GD/socialize.shortenURL+REST
      */
-    public shortenURL(params: BaseParams & SocializeShortenURLParams) {
-        return this.gigya.request<SocializeShortenURLResponse>('socialize.shortenURL', params);
+    public shortenURL(params: BaseParams & SocializeShortenURLParams, options?: CoreOptions | undefined) {
+        return this.gigya.request<SocializeShortenURLResponse>('socialize.shortenURL', params, options);
     }
 }
 

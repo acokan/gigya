@@ -1,6 +1,6 @@
 import Gigya from './gigya';
-import GigyaResponse from './interfaces/gigya-response';
 import BaseParams from './interfaces/base-params';
+import { CoreOptions } from 'request';
 
 export * from './interfaces/gigya-response';
 export * from './interfaces/base-params';
@@ -14,8 +14,8 @@ export class IDX {
      * 
      * @see http://developers.gigya.com/display/GD/idx.createDataflow+REST
      */
-    public createDataflow(params: BaseParams & any) {
-        return this.gigya.request<any>('idx.createDataflow', params);
+    public createDataflow(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('idx.createDataflow', params, options);
     }
 
     /**
@@ -23,8 +23,8 @@ export class IDX {
      * 
      * @see http://developers.gigya.com/display/GD/idx.getDataflow+REST
      */
-    public getDataflow(params: BaseParams & any) {
-        return this.gigya.request<any>('idx.getDataflow', params);
+    public getDataflow(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('idx.getDataflow', params, options);
     }
 
     /**
@@ -32,8 +32,8 @@ export class IDX {
      * 
      * @see http://developers.gigya.com/display/GD/idx.setDataflow+REST
      */
-    public setDataflow(params: BaseParams & any) {
-        return this.gigya.request<any>('idx.setDataflow', params);
+    public setDataflow(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('idx.setDataflow', params, options);
     }
 
     /**
@@ -41,8 +41,8 @@ export class IDX {
      * 
      * @see http://developers.gigya.com/display/GD/idx.deleteDataflow+REST
      */
-    public deleteDataflow(params: BaseParams & IDXDeleteDataflowParams) {
-        return this.gigya.request('idx.deleteDataflow', params);
+    public deleteDataflow(params: BaseParams & IDXDeleteDataflowParams, options?: CoreOptions | undefined) {
+        return this.gigya.request('idx.deleteDataflow', params, options);
     }
 
     /**
@@ -50,8 +50,8 @@ export class IDX {
      * 
      * @see http://developers.gigya.com/display/GD/idx.createScheduling+REST
      */
-    public createScheduling(params: BaseParams & any) {
-        return this.gigya.request<any>('idx.createScheduling', params);
+    public createScheduling(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('idx.createScheduling', params, options);
     }
 
     /**
@@ -59,8 +59,8 @@ export class IDX {
      * 
      * @see http://developers.gigya.com/display/GD/idx.getScheduling+REST
      */
-    public getScheduling(params: BaseParams & any) {
-        return this.gigya.request<any>('idx.getScheduling', params);
+    public getScheduling(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('idx.getScheduling', params, options);
     }
 
     /**
@@ -68,8 +68,8 @@ export class IDX {
      * 
      * @see http://developers.gigya.com/display/GD/idx.setScheduling+REST
      */
-    public setScheduling(params: BaseParams & any) {
-        return this.gigya.request<any>('idx.setScheduling', params);
+    public setScheduling(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('idx.setScheduling', params, options);
     }
 
     /**
@@ -77,8 +77,8 @@ export class IDX {
      * 
      * @see http://developers.gigya.com/display/GD/idx.deleteScheduling+REST
      */
-    public deleteScheduling(params: BaseParams & IDXDeleteSchedulingParams) {
-        return this.gigya.request('idx.deleteScheduling', params);
+    public deleteScheduling(params: BaseParams & IDXDeleteSchedulingParams, options?: CoreOptions | undefined) {
+        return this.gigya.request('idx.deleteScheduling', params, options);
     }
 
     /**
@@ -86,8 +86,8 @@ export class IDX {
      * 
      * @see http://developers.gigya.com/display/GD/idx.search+REST
      */
-    public search(params: BaseParams & IDXSearchParams) {
-        return this.gigya.request<any>('idx.search', params);
+    public search(params: BaseParams & IDXSearchParams, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('idx.search', params, options);
     }
 }
 

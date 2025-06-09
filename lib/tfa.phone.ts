@@ -1,3 +1,4 @@
+import { CoreOptions } from 'request';
 import Gigya from './gigya';
 import { BaseTFAParams, PhoneCompleteVerificationParams, PhoneVerificationCodeParams, RegisterParams, RemovePhoneParams } from './interfaces/tfa';
 
@@ -13,8 +14,8 @@ export class TFAPhone {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413bb9ee70b21014bbc5a10ce4041860.html
      */
-    public completeVerification(params: PhoneCompleteVerificationParams & any) {
-        return this.gigya.request<any>('accounts.tfa.phone.completeVerification', params);
+    public completeVerification(params: PhoneCompleteVerificationParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.phone.completeVerification', params, options);
     }
     
     /**
@@ -22,8 +23,8 @@ export class TFAPhone {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413bcd4070b21014bbc5a10ce4041860.html
      */
-    public getCertificate(params: BaseTFAParams & any) {
-        return this.gigya.request<any>('accounts.tfa.phone.getCertificate', params);
+    public getCertificate(params: BaseTFAParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.phone.getCertificate', params, options);
     }
     
     
@@ -33,8 +34,8 @@ export class TFAPhone {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413be06570b21014bbc5a10ce4041860.html
      */
-    public getRegisteredPhoneNumbers(params: RegisterParams & any) {
-        return this.gigya.request<any>('accounts.tfa.phone.getRegisteredPhoneNumbers', params);
+    public getRegisteredPhoneNumbers(params: RegisterParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.phone.getRegisteredPhoneNumbers', params, options);
     }
     
      /**
@@ -42,8 +43,8 @@ export class TFAPhone {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413bf36d70b21014bbc5a10ce4041860.html
      */
-    public removePhone(params: RemovePhoneParams & any) {
-        return this.gigya.request<any>('accounts.tfa.phone.removePhone', params);
+    public removePhone(params: RemovePhoneParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.phone.removePhone', params, options);
     }
       // removePhone RegisterParams and phoneId: string
     
@@ -52,8 +53,8 @@ export class TFAPhone {
      *  
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413c069e70b21014bbc5a10ce4041860.html
      */
-    public sendVerificationCode(params: PhoneVerificationCodeParams & any) {
-        return this.gigya.request<any>('accounts.tfa.phone.sendVerificationCode', params);
+    public sendVerificationCode(params: PhoneVerificationCodeParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.phone.sendVerificationCode', params, options);
     }
     // sendVerificationCode  RegisterParams and phoneID: string; phone: number; method: string; ( "sms" or "voice".) lang: string
 }

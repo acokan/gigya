@@ -1,3 +1,4 @@
+import { CoreOptions } from 'request';
 import Gigya from './gigya';
 import { CompleteVerificationParams, RegisterParams, VerificationCodeParams } from './interfaces/tfa';
 
@@ -14,8 +15,8 @@ export class TFAEmail {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413b1e8a70b21014bbc5a10ce4041860.html
      */
-    public getEmails(params: RegisterParams & any) {
-        return this.gigya.request<any>('accounts.tfa.email.getEmails', params);
+    public getEmails(params: RegisterParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.email.getEmails', params, options);
     }
     
     /**
@@ -25,8 +26,8 @@ export class TFAEmail {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413b0b7d70b21014bbc5a10ce4041860.html
      */
-    public completeVerification(params: CompleteVerificationParams & any) {
-        return this.gigya.request<any>('accounts.tfa.email.completeVerification', params);
+    public completeVerification(params: CompleteVerificationParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.email.completeVerification', params, options);
     }
 
     /**
@@ -35,8 +36,8 @@ export class TFAEmail {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413b31d470b21014bbc5a10ce4041860.html
      */
-    public sendVerificationCode(params: VerificationCodeParams & any) {
-        return this.gigya.request<any>('accounts.tfa.email.sendVerificationCode', params);
+    public sendVerificationCode(params: VerificationCodeParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.email.sendVerificationCode', params, options);
     }
 }
 

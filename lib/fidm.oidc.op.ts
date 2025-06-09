@@ -1,6 +1,6 @@
 import Gigya from './gigya';
-import GigyaResponse from './interfaces/gigya-response';
 import BaseParams from './interfaces/base-params';
+import { CoreOptions } from 'request';
 
 export * from './interfaces/gigya-response';
 export * from './interfaces/base-params';
@@ -14,8 +14,8 @@ export class FidmOidcOp {
      *
      * @see http://developers.gigya.com/display/GD/fidm.oidc.op.clearConfig+REST
      */
-    public clearConfig(params: BaseParams & any) {
-        return this.gigya.request('fidm.oidc.op.clearConfig', params);
+    public clearConfig(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request('fidm.oidc.op.clearConfig', params, options);
     }
 
     /**
@@ -23,8 +23,8 @@ export class FidmOidcOp {
      *
      * @see http://developers.gigya.com/display/GD/fidm.oidc.op.createRP+REST
      */
-    public createRP(params: BaseParams & any) {
-        return this.gigya.request('fidm.oidc.op.createRP', params);
+    public createRP(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request('fidm.oidc.op.createRP', params, options);
     }
 
     /**
@@ -32,8 +32,8 @@ export class FidmOidcOp {
      *
      * @see http://developers.gigya.com/display/GD/fidm.oidc.op.delRP+REST
      */
-    public delRP(params: BaseParams & any) {
-        return this.gigya.request('fidm.oidc.op.delRP', params);
+    public delRP(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request('fidm.oidc.op.delRP', params, options);
     }
 
     /**
@@ -41,8 +41,8 @@ export class FidmOidcOp {
      *
      * @see http://developers.gigya.com/display/GD/fidm.oidc.op.getConfig+REST
      */
-    public getConfig(params: BaseParams & any) {
-        return this.gigya.request('fidm.oidc.op.getConfig', params);
+    public getConfig(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request('fidm.oidc.op.getConfig', params, options);
     }
 
     /**
@@ -50,8 +50,8 @@ export class FidmOidcOp {
     *
     * @see http://developers.gigya.com/display/GD/fidm.oidc.op.getMetadata+REST
     */
-    public getMetadata(params: BaseParams & any) {
-        return this.gigya.request('fidm.oidc.op.getMetadata', params);
+    public getMetadata(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request('fidm.oidc.op.getMetadata', params, options);
     }
 
     /**
@@ -59,8 +59,8 @@ export class FidmOidcOp {
      *
      * @see http://developers.gigya.com/display/GD/fidm.oidc.op.getRP+REST
      */
-    public getRP(params: BaseParams & any) {
-        return this.gigya.request('fidm.oidc.op.getRP', params);
+    public getRP(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request('fidm.oidc.op.getRP', params, options);
     }
 
     /**
@@ -68,8 +68,8 @@ export class FidmOidcOp {
      *
      * @see http://developers.gigya.com/display/GD/fidm.oidc.op.getRPs+REST
      */
-    public getRPs(params: BaseParams & any) {
-        return this.gigya.request('fidm.oidc.op.getRPs', params);
+    public getRPs(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request('fidm.oidc.op.getRPs', params, options);
     }
 
     /**
@@ -77,8 +77,8 @@ export class FidmOidcOp {
      *
      * @see http://developers.gigya.com/display/GD/fidm.oidc.op.setConfig+REST
      */
-    public setConfig(params: BaseParams & any) {
-        return this.gigya.request('fidm.oidc.op.setConfig', params);
+    public setConfig(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request('fidm.oidc.op.setConfig', params, options);
     }
 
     /**
@@ -86,8 +86,8 @@ export class FidmOidcOp {
      *
      * @see http://developers.gigya.com/display/GD/fidm.oidc.op.updateRP+REST
      */
-    public updateRP(params: BaseParams & any) {
-        return this.gigya.request('fidm.oidc.op.updateRP', params);
+    public updateRP(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request('fidm.oidc.op.updateRP', params, options);
     }
 }
 

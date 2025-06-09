@@ -4,6 +4,7 @@ import GigyaResponse from './interfaces/gigya-response';
 import BaseParams from './interfaces/base-params';
 import SamlConfig from './interfaces/saml-config';
 import ExternalIdP from './interfaces/external-idp';
+import { CoreOptions } from 'request';
 
 export * from './fidm.saml.idp';
 export * from './interfaces/gigya-response';
@@ -23,8 +24,8 @@ export class FidmSaml {
      * 
      * @see http://developers.gigya.com/display/GD/fidm.saml.delIdP+REST
      */
-    public delIdP(params: BaseParams & FidmSamlDelIdPParams) {
-        return this.gigya.request('fidm.saml.delIdP', params);
+    public delIdP(params: BaseParams & FidmSamlDelIdPParams, options?: CoreOptions | undefined) {
+        return this.gigya.request('fidm.saml.delIdP', params, options);
     }
 
     /**
@@ -32,8 +33,8 @@ export class FidmSaml {
      * 
      * @see http://developers.gigya.com/display/GD/fidm.saml.getConfig+REST
      */
-    public getConfig(params: BaseParams & FidmSamlGetConfigParams) {
-        return this.gigya.request<FidmSamlGetConfigResponse>('fidm.saml.getConfig', params);
+    public getConfig(params: BaseParams & FidmSamlGetConfigParams, options?: CoreOptions | undefined) {
+        return this.gigya.request<FidmSamlGetConfigResponse>('fidm.saml.getConfig', params, options);
     }
 
     /**
@@ -41,8 +42,8 @@ export class FidmSaml {
      * 
      * @see http://developers.gigya.com/display/GD/fidm.saml.getRegisteredIdPs+REST
      */
-    public getRegisteredIdPs(params?: BaseParams) {
-        return this.gigya.request<FidmSamlGetRegisteredIdPsResponse>('fidm.saml.getRegisteredIdPs', params);
+    public getRegisteredIdPs(params?: BaseParams, options?: CoreOptions | undefined) {
+        return this.gigya.request<FidmSamlGetRegisteredIdPsResponse>('fidm.saml.getRegisteredIdPs', params, options);
     }
 
     /**
@@ -50,8 +51,8 @@ export class FidmSaml {
      * 
      * @see http://developers.gigya.com/display/GD/fidm.saml.importIdPMetadata+REST
      */
-    public importIdPMetadata(params: BaseParams & FidmSamlImportIdPMetadataParams) {
-        return this.gigya.request<FidmSamlImportIdPMetadataResponse>('fidm.saml.importIdPMetadata', params);
+    public importIdPMetadata(params: BaseParams & FidmSamlImportIdPMetadataParams, options?: CoreOptions | undefined) {
+        return this.gigya.request<FidmSamlImportIdPMetadataResponse>('fidm.saml.importIdPMetadata', params, options);
     }
 
     /**
@@ -59,8 +60,8 @@ export class FidmSaml {
      * 
      * @see http://developers.gigya.com/display/GD/fidm.saml.registerIdP+REST
      */
-    public registerIdP(params: BaseParams & FidmSamlRegisterIdPParams) {
-        return this.gigya.request('fidm.saml.registerIdP', params);
+    public registerIdP(params: BaseParams & FidmSamlRegisterIdPParams, options?: CoreOptions | undefined) {
+        return this.gigya.request('fidm.saml.registerIdP', params, options);
     }
 
     /**
@@ -68,8 +69,8 @@ export class FidmSaml {
      * 
      * @see http://developers.gigya.com/display/GD/fidm.saml.setConfig+REST
      */
-    public setConfig(params: BaseParams & FidmSamlSetConfigParams) {
-        return this.gigya.request('fidm.saml.setConfig', params);
+    public setConfig(params: BaseParams & FidmSamlSetConfigParams, options?: CoreOptions | undefined) {
+        return this.gigya.request('fidm.saml.setConfig', params, options);
     }
 }
 

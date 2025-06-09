@@ -1,3 +1,4 @@
+import { CoreOptions } from 'request';
 import Gigya from './gigya';
 import { BackupCodeVerifyParams, RegisterParams } from './interfaces/tfa';
 
@@ -14,8 +15,8 @@ export class TFABackupCodes {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413abafd70b21014bbc5a10ce4041860.html
      */
-    public create(params: RegisterParams & any) {
-        return this.gigya.request<any>('accounts.tfa.backupcodes.create', params);
+    public create(params: RegisterParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.backupcodes.create', params, options);
     }
     
     /**
@@ -23,8 +24,8 @@ export class TFABackupCodes {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413ace4a70b21014bbc5a10ce4041860.html
      */
-    public get(params: RegisterParams & any) {
-        return this.gigya.request<any>('accounts.tfa.backupcodes.get', params);
+    public get(params: RegisterParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.backupcodes.get', params, options);
     }
     
     
@@ -33,8 +34,8 @@ export class TFABackupCodes {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413ace4a70b21014bbc5a10ce4041860.html
      */
-     public verify(params: BackupCodeVerifyParams & any) {
-        return this.gigya.request<any>('accounts.tfa.backupcodes.verify', params);
+     public verify(params: BackupCodeVerifyParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.backupcodes.verify', params, options);
     }
 }
 

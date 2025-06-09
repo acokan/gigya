@@ -1,3 +1,4 @@
+import { CoreOptions } from 'request';
 import Gigya from './gigya';
 import { RegisterParams } from './interfaces/tfa';
 
@@ -15,8 +16,8 @@ export class TFATotp {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413c65da70b21014bbc5a10ce4041860.html
      */
-    public totpRegister(params: RegisterParams & any) {
-        return this.gigya.request<any>('accounts.tfa.totp.register', params);
+    public totpRegister(params: RegisterParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.totp.register', params, options);
     }
     
     /**
@@ -26,8 +27,8 @@ export class TFATotp {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413cb1cd70b21014bbc5a10ce4041860.html
      */
-     public totpVerify(params: RegisterParams & any) {
-        return this.gigya.request<any>('accounts.tfa.totp.verify', params);
+     public totpVerify(params: RegisterParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.totp.verify', params, options);
     }
 }
 

@@ -1,3 +1,4 @@
+import { CoreOptions } from 'request';
 import Gigya from './gigya';
 import { DeleteOTPParams, LoginOTPParams, SendCodeParams, UpdateParams } from './interfaces/otp';
 
@@ -14,8 +15,8 @@ export class OTP {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/8f313cc471f549d49fcc8ab3a430aea9.html
      */
-    public delete(params: DeleteOTPParams & any) {
-        return this.gigya.request<any>('accounts.otp.delete', params);
+    public delete(params: DeleteOTPParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.otp.delete', params, options);
     }
     
     /**
@@ -23,8 +24,8 @@ export class OTP {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/4137bbe870b21014bbc5a10ce4041860.html
      */
-    public login(params: LoginOTPParams & any) {
-        return this.gigya.request<any>('accounts.otp.login', params);
+    public login(params: LoginOTPParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.otp.login', params, options);
     }
     
     /**
@@ -33,8 +34,8 @@ export class OTP {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/4137e1be70b21014bbc5a10ce4041860.html
      */
-    public sendCode(params: SendCodeParams & any) {
-        return this.gigya.request<any>('accounts.otp.sendCode', params);
+    public sendCode(params: SendCodeParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.otp.sendCode', params, options);
     }
     
      
@@ -46,8 +47,8 @@ export class OTP {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413807a270b21014bbc5a10ce4041860.html
      */
-    public update(params: UpdateParams & any) {
-        return this.gigya.request<any>('accounts.otp.update', params);
+    public update(params: UpdateParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.otp.update', params, options);
     }
 }
 

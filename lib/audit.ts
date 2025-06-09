@@ -1,6 +1,6 @@
 import Gigya from './gigya';
-import GigyaResponse from './interfaces/gigya-response';
 import { BaseParamsSite } from './interfaces/base-params';
+import { CoreOptions } from 'request';
 
 export * from './interfaces/gigya-response';
 export * from './interfaces/base-params';
@@ -14,8 +14,8 @@ export class Audit {
      * 
      * @see http://developers.gigya.com/display/GD/audit.search
      */
-    public search(params: BaseParamsSite & AuditSearchParams) {
-        return this.gigya.request<AuditSearchResponse>('audit.search', params);
+    public search(params: BaseParamsSite & AuditSearchParams, options?: CoreOptions | undefined) {
+        return this.gigya.request<AuditSearchResponse>('audit.search', params, options);
     }
 }
 

@@ -1,6 +1,6 @@
 import Gigya from './gigya';
-import GigyaResponse from './interfaces/gigya-response';
 import BaseParams from './interfaces/base-params';
+import { CoreOptions } from 'request';
 
 export * from './interfaces/gigya-response';
 export * from './interfaces/base-params';
@@ -14,8 +14,8 @@ export class Webhooks {
      * 
      * @see http://developers.gigya.com/display/GD/accounts.webhooks.delete+REST
      */
-    public delete(params: BaseParams & WebhooksDeleteParams) {
-        return this.gigya.request('accounts.webhooks.delete', params);
+    public delete(params: BaseParams & WebhooksDeleteParams, options?: CoreOptions | undefined) {
+        return this.gigya.request('accounts.webhooks.delete', params, options);
     }
 
     /**
@@ -23,7 +23,7 @@ export class Webhooks {
      * 
      * @see http://developers.gigya.com/display/GD/accounts.webhooks.getAll+REST
      */
-    public getAll(params?: WebhooksGetAllParams) {
+    public getAll(params?: WebhooksGetAllParams, options?: CoreOptions | undefined) {
         return this.gigya.request<WebhooksGetAllResponse>('accounts.webhooks.getAll', params || {});
     }
 
@@ -32,8 +32,8 @@ export class Webhooks {
      * 
      * @see http://developers.gigya.com/display/GD/accounts.webhooks.set+REST
      */
-    public set(params: BaseParams & WebhooksSetParams) {
-        return this.gigya.request<WebhooksGetAllResponse>('accounts.webhooks.set', params);
+    public set(params: BaseParams & WebhooksSetParams, options?: CoreOptions | undefined) {
+        return this.gigya.request<WebhooksGetAllResponse>('accounts.webhooks.set', params, options);
     }
 }
 

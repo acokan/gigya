@@ -1,7 +1,7 @@
 import Gigya from './gigya';
-import GigyaResponse from './interfaces/gigya-response';
 import { BaseParamsSite } from './interfaces/base-params';
 import { CaptchaProvider } from "./interfaces/captchaProvider";
+import { CoreOptions } from 'request';
 
 export * from './interfaces/gigya-response';
 export * from './interfaces/base-params';
@@ -15,8 +15,8 @@ export class Admin {
      * 
      * @see http://developers.gigya.com/display/GD/admin.createSite+REST
      */
-    public createSite(params: BaseParamsSite & AdminCreateSiteParams) {
-        return this.gigya.request<AdminCreateSiteResponse>('admin.createSite', params);
+    public createSite(params: BaseParamsSite & AdminCreateSiteParams, options?: CoreOptions | undefined) {
+        return this.gigya.request<AdminCreateSiteResponse>('admin.createSite', params, options);
     }
 
     /**
@@ -24,8 +24,8 @@ export class Admin {
      * 
      * @see http://developers.gigya.com/display/GD/admin.getACL+REST
      */
-    public getEffectiveACL(params: BaseParamsSite & (AdminGetEffectiveACLTargetUserKeyParams | AdminGetEffectiveACLGroupIDsParams)) {
-        return this.gigya.request<AdminGetEffectiveACLResponse>('admin.getEffectiveACL', params);
+    public getEffectiveACL(params: BaseParamsSite & (AdminGetEffectiveACLTargetUserKeyParams | AdminGetEffectiveACLGroupIDsParams), options?: CoreOptions | undefined) {
+        return this.gigya.request<AdminGetEffectiveACLResponse>('admin.getEffectiveACL', params, options);
     }
 
     /**
@@ -33,8 +33,8 @@ export class Admin {
      * 
      * @see http://developers.gigya.com/display/GD/admin.getPartner+REST
      */
-    public getPartner(params: BaseParamsSite & AdminGetPartnerParams) {
-        return this.gigya.request<AdminGetPartnerResponse>('admin.getPartner', params);
+    public getPartner(params: BaseParamsSite & AdminGetPartnerParams, options?: CoreOptions | undefined) {
+        return this.gigya.request<AdminGetPartnerResponse>('admin.getPartner', params, options);
     }
 
     /**
@@ -42,8 +42,8 @@ export class Admin {
      * 
      * @see http://developers.gigya.com/display/GD/admin.getACL+REST
      */
-    public getSiteConfig(params: BaseParamsSite & AdminGetSiteConfigParams) {
-        return this.gigya.request<AdminGetSiteConfigResponse>('admin.getSiteConfig', params);
+    public getSiteConfig(params: BaseParamsSite & AdminGetSiteConfigParams, options?: CoreOptions | undefined) {
+        return this.gigya.request<AdminGetSiteConfigResponse>('admin.getSiteConfig', params, options);
     }
 
     /**
@@ -51,8 +51,8 @@ export class Admin {
      * 
      * @see http://developers.gigya.com/display/GD/admin.getUserSites+REST
      */
-    public getUserSites(params: BaseParamsSite & AdminGetUserSitesParams) {
-        return this.gigya.request<AdminGetUserSitesResponse>('admin.getUserSites', params);
+    public getUserSites(params: BaseParamsSite & AdminGetUserSitesParams, options?: CoreOptions | undefined) {
+        return this.gigya.request<AdminGetUserSitesResponse>('admin.getUserSites', params, options);
     }
 
     /**
@@ -60,8 +60,8 @@ export class Admin {
      * 
      * @see http://developers.gigya.com/display/GD/admin.search+REST
      */
-    public search(params: BaseParamsSite & AdminSearchParams) {
-        return this.gigya.request<AdminSearchResponse>('admin.search', params);
+    public search(params: BaseParamsSite & AdminSearchParams, options?: CoreOptions | undefined) {
+        return this.gigya.request<AdminSearchResponse>('admin.search', params, options);
     }
 
     /**
@@ -69,8 +69,8 @@ export class Admin {
      * 
      * @see http://developers.gigya.com/display/GD/admin.setSiteConfig+REST
      */
-    public setSiteConfig(params: BaseParamsSite & AdminSetSiteConfigParams) {
-        return this.gigya.request('admin.setSiteConfig', params);
+    public setSiteConfig(params: BaseParamsSite & AdminSetSiteConfigParams, options?: CoreOptions | undefined) {
+        return this.gigya.request('admin.setSiteConfig', params, options);
     }
 
     /**
@@ -78,8 +78,8 @@ export class Admin {
      *
      * @see http://developers.gigya.com/display/GD/admin.deleteSite+REST
      */
-    public deleteSite(params: BaseParamsSite & AdminDeleteSiteParams) {
-        return this.gigya.request('admin.deleteSite', params);
+    public deleteSite(params: BaseParamsSite & AdminDeleteSiteParams, options?: CoreOptions | undefined) {
+        return this.gigya.request('admin.deleteSite', params, options);
     }
 
     /**
@@ -87,8 +87,8 @@ export class Admin {
      *
      * @see https://developers.gigya.com/display/GD/admin.updatePartner+REST
      */
-    public updatePartner(params: BaseParamsSite & AdminUpdatePartnerParams) {
-        return this.gigya.request('admin.updatePartner', params);
+    public updatePartner(params: BaseParamsSite & AdminUpdatePartnerParams, options?: CoreOptions | undefined) {
+        return this.gigya.request('admin.updatePartner', params, options);
     }
 }
 

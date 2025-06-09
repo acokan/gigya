@@ -24,6 +24,7 @@ import {AuthBearerSigner, isRSACreds, RSACredentials} from "./requestsSigners/Au
 import {isSecretCredentials, SecretCredentials} from "./requestsSigners/SimpleRequestSigner";
 import {ISigner} from "./requestsSigners/ISigner";
 import {isCredentials} from "./requestsSigners/AuthRequestSigner";
+import { CoreOptions } from 'request';
 
 export * from './sig-utils';
 export * from './admin';
@@ -181,14 +182,14 @@ export class Gigya {
      *
      * If a method is not available, create an issue or pull request at: https://github.com/scotthovestadt/gigya
      */
-    public async request<R>(endpoint: string, userParams: any = {}): Promise<GigyaResponse & R> {
-        return this._request<R>(endpoint, userParams);
+    public async request<R>(endpoint: string, userParams: any = {}, options?: CoreOptions | undefined): Promise<GigyaResponse & R> {
+        return this._request<R>(endpoint, userParams, 0, options);
     }
 
     /**
      * Internal handler for requests.
      */
-    protected async _request<R>(endpoint: string, userParams: BaseParams & { [key: string]: any; }, retries = 0): Promise<GigyaResponse & R> {
+    protected async _request<R>(endpoint: string, userParams: BaseParams & { [key: string]: any; }, retries = 0, options?: CoreOptions | undefined): Promise<GigyaResponse & R> {
         const requestFactory = new RequestFactory(
             userParams.apiKey || this._apiKey,
             userParams.dataCenter || this._dataCenter);
@@ -207,7 +208,11 @@ export class Gigya {
                 request.endpoint,
                 request.host,
                 request.params,
-                request.headers);
+                {
+                    headers: request.headers,
+                    ...options
+                }               
+            );
 
             // Non-zero error code means failure.
             if (response.errorCode !== 0) {
@@ -223,7 +228,7 @@ export class Gigya {
                     if (Gigya.RETRY_DELAY) {
                         await sleep(Gigya.RETRY_DELAY);
                     }
-                    return this._request<R>(endpoint, userParams, retries);
+                    return this._request<R>(endpoint, userParams, retries, options);
                 }
             }
             throw e;
@@ -233,7 +238,7 @@ export class Gigya {
         if (response.errorCode === ErrorCode.RATE_LIMIT_HIT) {
             // Try again after waiting.
             await sleep(Gigya.RATE_LIMIT_SLEEP);
-            return this._request<R>(endpoint, userParams, retries);
+            return this._request<R>(endpoint, userParams, retries, options);
         }
 
         // Ensure Gigya returned successful response. If not, throw error with details.

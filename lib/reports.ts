@@ -1,6 +1,6 @@
 import Gigya from './gigya';
-import GigyaResponse from './interfaces/gigya-response';
 import BaseParams from './interfaces/base-params';
+import { CoreOptions } from 'request';
 
 export * from './interfaces/gigya-response';
 export * from './interfaces/base-params';
@@ -14,8 +14,8 @@ export class Reports {
      * 
      * @see http://developers.gigya.com/display/GD/reports.getAccountsStats+REST
      */
-    public getAccountsStats(params: BaseParams & any) {
-        return this.gigya.request<any>('reports.getAccountsStats', params);
+    public getAccountsStats(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('reports.getAccountsStats', params, options);
     }
 
     /**
@@ -23,8 +23,8 @@ export class Reports {
      * 
      * @see http://developers.gigya.com/display/GD/reports.getCommentsStats+REST
      */
-    public getCommentsStats(params: BaseParams & any) {
-        return this.gigya.request<any>('reports.getCommentsStats', params);
+    public getCommentsStats(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('reports.getCommentsStats', params, options);
     }
 
     /**
@@ -32,8 +32,8 @@ export class Reports {
      * 
      * @see http://developers.gigya.com/display/GD/reports.getGMRedeemablePoints+REST
      */
-    public getGMRedeemablePoints(params: BaseParams & any) {
-        return this.gigya.request<any>('reports.getGMRedeemablePoints', params);
+    public getGMRedeemablePoints(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('reports.getGMRedeemablePoints', params, options);
     }
 
     /**
@@ -41,8 +41,8 @@ export class Reports {
      * 
      * @see http://developers.gigya.com/display/GD/reports.getGMStats+REST
      */
-    public getGMStats(params: BaseParams & any) {
-        return this.gigya.request<any>('reports.getGMStats', params);
+    public getGMStats(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('reports.getGMStats', params, options);
     }
 
     /**
@@ -50,8 +50,8 @@ export class Reports {
      * 
      * @see http://developers.gigya.com/display/GD/reports.getGMTopUsers+REST
      */
-    public getGMTopUsers(params: BaseParams & any) {
-        return this.gigya.request<any>('reports.getGMTopUsers', params);
+    public getGMTopUsers(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('reports.getGMTopUsers', params, options);
     }
 
     /**
@@ -59,8 +59,8 @@ export class Reports {
      * 
      * @see http://developers.gigya.com/display/GD/reports.getGMUserStats+REST
      */
-    public getGMUserStats(params: BaseParams & any) {
-        return this.gigya.request<any>('reports.getGMUserStats', params);
+    public getGMUserStats(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('reports.getGMUserStats', params, options);
     }
 
     /**
@@ -68,8 +68,8 @@ export class Reports {
      * 
      * @see http://developers.gigya.com/display/GD/reports.getIRank+REST
      */
-    public getIRank(params: BaseParams & any) {
-        return this.gigya.request<any>('reports.getIRank', params);
+    public getIRank(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('reports.getIRank', params, options);
     }
 
     /**
@@ -77,8 +77,8 @@ export class Reports {
      * 
      * @see http://developers.gigya.com/display/GD/reports.getReactionsStats+REST
      */
-    public getReactionsStats(params: BaseParams & any) {
-        return this.gigya.request<any>('reports.getReactionsStats', params);
+    public getReactionsStats(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('reports.getReactionsStats', params, options);
     }
 
     /**
@@ -86,8 +86,8 @@ export class Reports {
      * 
      * @see http://developers.gigya.com/display/GD/reports.getSocializeStats+REST
      */
-    public getSocializeStats(params: BaseParams & any) {
-        return this.gigya.request<any>('reports.getSocializeStats', params);
+    public getSocializeStats(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('reports.getSocializeStats', params, options);
     }
 }
 

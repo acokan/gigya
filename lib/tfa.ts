@@ -1,3 +1,4 @@
+import { CoreOptions } from 'request';
 import Gigya from './gigya';
 import { BaseTFAParams, FinalizeTFAParams, ImportTFAParams, InitTFAParams, ProvidersTFAParams, ResetTFAParams, UnregisterDeviceParams } from './interfaces/tfa';
 import TFABackupCodes from './tfa.backupcodes';
@@ -31,8 +32,8 @@ export class TFA {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413ba6e870b21014bbc5a10ce4041860.html
      */
-    public initTFA(params: InitTFAParams & any) {
-        return this.gigya.request<any>('accounts.tfa.initTFA', params);
+    public initTFA(params: InitTFAParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.initTFA', params, options);
     }
 
     /**
@@ -40,8 +41,8 @@ export class TFA {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413b44d170b21014bbc5a10ce4041860.html
      */
-    public finalizeTFA(params: FinalizeTFAParams & any) {
-        return this.gigya.request<any>('accounts.tfa.finalizeTFA', params);
+    public finalizeTFA(params: FinalizeTFAParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.finalizeTFA', params, options);
     }
 
     /**
@@ -50,8 +51,8 @@ export class TFA {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413b57d970b21014bbc5a10ce4041860.html
      */
-    public getCertificate(params: BaseTFAParams & any) {
-        return this.gigya.request<any>('accounts.tfa.getCertificate', params);
+    public getCertificate(params: BaseTFAParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.getCertificate', params, options);
     }
     
     /**
@@ -59,8 +60,8 @@ export class TFA {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413b6ced70b21014bbc5a10ce4041860.html
      */
-    public getProviders(params: ProvidersTFAParams & any) {
-        return this.gigya.request<any>('accounts.tfa.getProviders', params);
+    public getProviders(params: ProvidersTFAParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.getProviders', params, options);
     }
     
     /**
@@ -69,8 +70,8 @@ export class TFA {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413b800070b21014bbc5a10ce4041860.html
      */
-       public importTFA(params: ImportTFAParams & any) {
-        return this.gigya.request<any>('accounts.tfa.importTFA', params);
+       public importTFA(params: ImportTFAParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.importTFA', params, options);
     }
     
     
@@ -80,8 +81,8 @@ export class TFA {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413c65da70b21014bbc5a10ce4041860.html
      */
-    public resetTFA(params: ResetTFAParams & any) {
-        return this.gigya.request<any>('accounts.tfa.resetTFA', params);
+    public resetTFA(params: ResetTFAParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.resetTFA', params, options);
     }
     
     /**
@@ -90,8 +91,8 @@ export class TFA {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413af46770b21014bbc5a10ce4041860.html
      */
-    public deactivateProvider(params: ResetTFAParams & any) {
-        return this.gigya.request<any>('accounts.tfa.deactivateProvider', params);
+    public deactivateProvider(params: ResetTFAParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.deactivateProvider', params, options);
     }
 
     /**
@@ -101,8 +102,8 @@ export class TFA {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413cc8e070b21014bbc5a10ce4041860.html
      */
-     public unregisterDevice(params: UnregisterDeviceParams & any) {
-        return this.gigya.request<any>('accounts.tfa.unregisterDevice', params);
+     public unregisterDevice(params: UnregisterDeviceParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.unregisterDevice', params, options);
     }
 }
 

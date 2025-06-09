@@ -1,6 +1,6 @@
 import Gigya from './gigya';
-import GigyaResponse from './interfaces/gigya-response';
 import BaseParams from './interfaces/base-params';
+import { CoreOptions } from 'request';
 
 export * from './interfaces/gigya-response';
 export * from './interfaces/base-params';
@@ -14,8 +14,8 @@ export class RBA {
      * 
      * @see http://developers.gigya.com/display/GD/accounts.rba.getPolicy
      */
-    public getPolicy(params: BaseParams & any) {
-        return this.gigya.request<any>('accounts.rba.getPolicy', params);
+    public getPolicy(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.rba.getPolicy', params, options);
     }
 
     /**
@@ -23,8 +23,8 @@ export class RBA {
      * 
      * @see http://developers.gigya.com/display/GD/accounts.rba.setPolicy
      */
-    public setPolicy(params: BaseParams & any) {
-        return this.gigya.request<any>('accounts.rba.setPolicy', params);
+    public setPolicy(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.rba.setPolicy', params, options);
     }
 
     /**
@@ -32,8 +32,8 @@ export class RBA {
      * 
      * @see http://developers.gigya.com/display/GD/accounts.rba.unlock
      */
-    public unlock(params: BaseParams & any) {
-        return this.gigya.request<any>('accounts.rba.unlock', params);
+    public unlock(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.rba.unlock', params, options);
     }
 }
 

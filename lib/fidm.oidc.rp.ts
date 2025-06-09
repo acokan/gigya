@@ -1,6 +1,6 @@
 import Gigya from './gigya';
-import GigyaResponse from './interfaces/gigya-response';
 import BaseParams from './interfaces/base-params';
+import { CoreOptions } from 'request';
 
 export * from './interfaces/gigya-response';
 export * from './interfaces/base-params';
@@ -14,8 +14,8 @@ export class FidmOidcRp {
      * 
      * @see http://developers.gigya.com/display/GD/fidm.oidc.rp.createOP+REST
      */
-    public createOP(params: BaseParams & FidmOidcRpCreateOPParams) {
-        return this.gigya.request('fidm.oidc.rp.createOP', params);
+    public createOP(params: BaseParams & FidmOidcRpCreateOPParams, options?: CoreOptions | undefined) {
+        return this.gigya.request('fidm.oidc.rp.createOP', params, options);
     }
 
     /**
@@ -23,8 +23,8 @@ export class FidmOidcRp {
      * 
      * @see http://developers.gigya.com/display/GD/fidm.oidc.rp.delOP+REST
      */
-    public delOP(params: BaseParams & FidmOidcRpDelOPParams) {
-        return this.gigya.request('fidm.oidc.rp.delOP', params);
+    public delOP(params: BaseParams & FidmOidcRpDelOPParams, options?: CoreOptions | undefined) {
+        return this.gigya.request('fidm.oidc.rp.delOP', params, options);
     }
 
     /**
@@ -32,8 +32,8 @@ export class FidmOidcRp {
      * 
      * @see http://developers.gigya.com/display/GD/fidm.oidc.rp.getOP+REST
      */
-    public getOP(params: BaseParams & FidmOidcRpGetOPParams) {
-        return this.gigya.request<FidmOidcRpGetOPResponse>('fidm.oidc.rp.getOP', params);
+    public getOP(params: BaseParams & FidmOidcRpGetOPParams, options?: CoreOptions | undefined) {
+        return this.gigya.request<FidmOidcRpGetOPResponse>('fidm.oidc.rp.getOP', params, options);
     }
 
     /**
@@ -41,8 +41,8 @@ export class FidmOidcRp {
      * 
      * @see http://developers.gigya.com/display/GD/fidm.oidc.rp.getOPs+REST
      */
-    public getOPs(params?: BaseParams) {
-        return this.gigya.request<FidmOidcRpGetOPsResponse>('fidm.oidc.rp.getOPs', params);
+    public getOPs(params?: BaseParams, options?: CoreOptions | undefined) {
+        return this.gigya.request<FidmOidcRpGetOPsResponse>('fidm.oidc.rp.getOPs', params, options);
     }
 
     /**
@@ -50,8 +50,8 @@ export class FidmOidcRp {
      * 
      * @see http://developers.gigya.com/display/GD/fidm.oidc.rp.updateOP+REST
      */
-    public updateOP(params: BaseParams & any) {
-        return this.gigya.request('fidm.oidc.rp.updateOP', params);
+    public updateOP(params: BaseParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request('fidm.oidc.rp.updateOP', params, options);
     }
 }
 

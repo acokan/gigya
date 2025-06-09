@@ -1,3 +1,4 @@
+import { CoreOptions } from 'request';
 import Gigya from './gigya';
 import { OptinPushParams, PushVerifyParams, RegisterParams } from './interfaces/tfa';
 
@@ -17,8 +18,8 @@ export class TFAPush {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413c199b70b21014bbc5a10ce4041860.html
      */
-    public isVerified(params: RegisterParams & any) {
-        return this.gigya.request<any>('accounts.tfa.push.isVerified', params);
+    public isVerified(params: RegisterParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.push.isVerified', params, options);
     }
     
     /**
@@ -28,8 +29,8 @@ export class TFAPush {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413c2c9870b21014bbc5a10ce4041860.html
      */
-    public optin(params: OptinPushParams & any) {
-        return this.gigya.request<any>('accounts.tfa.push.optin', params);
+    public optin(params: OptinPushParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.push.optin', params, options);
     }
     
     /**
@@ -38,8 +39,8 @@ export class TFAPush {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413c3f9d70b21014bbc5a10ce4041860.html
      */
-    public sendVerification(params: RegisterParams & any) {
-        return this.gigya.request<any>('accounts.tfa.push.sendVerification', params);
+    public sendVerification(params: RegisterParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.push.sendVerification', params, options);
     }
     
     /**
@@ -50,8 +51,8 @@ export class TFAPush {
      * 
      * @see https://help.sap.com/docs/SAP_CUSTOMER_DATA_CLOUD/8b8d6fffe113457094a17701f63e3d6a/413c529a70b21014bbc5a10ce4041860.html
      */
-    public verify(params: PushVerifyParams & any) {
-        return this.gigya.request<any>('accounts.tfa.push.verify', params);
+    public verify(params: PushVerifyParams & any, options?: CoreOptions | undefined) {
+        return this.gigya.request<any>('accounts.tfa.push.verify', params, options);
     }
 }
 
