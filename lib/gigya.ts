@@ -194,7 +194,7 @@ export class Gigya {
             userParams.apiKey || this._apiKey,
             userParams.dataCenter || this._dataCenter);
 
-        const request = requestFactory.create(endpoint, userParams);
+        const request = requestFactory.create(endpoint, userParams, options);
 
         if (!request.skipSigning) {
             const signer = this.getSigner(userParams as CredentialsType) || this._signer;

@@ -1,5 +1,5 @@
 import BaseParams, {DataCenter} from "./interfaces/base-params";
-import {Headers} from "request";
+import {CoreOptions, Headers} from "request";
 import _ = require("lodash");
 
 export interface FormatJsonRequest {
@@ -26,7 +26,7 @@ export class RequestFactory {
                 protected _dataCenter: DataCenter) {
     }
 
-    public create(endpoint: string, userParams: UserParams) {
+    public create(endpoint: string, userParams: UserParams, options?: CoreOptions | undefined) {
         // Endpoint "accounts.getAccountInfo" and data center "us1" become "accounts.us1.gigya.com".
         const namespace = endpoint.substring(0, endpoint.indexOf('.'));
         const isAdminEndpoint = namespace == 'admin';
@@ -52,7 +52,8 @@ export class RequestFactory {
             endpoint,
             params: this.getRequestParams(userParams),
             headers: {},
-            skipSigning: isOAuth || this.isAnonymousEndpoint(endpoint)
+            skipSigning: isOAuth || this.isAnonymousEndpoint(endpoint),
+            ...options
         } as GigyaRequest;
 
         return request;
